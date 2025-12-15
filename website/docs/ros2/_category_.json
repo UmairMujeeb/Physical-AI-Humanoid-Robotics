@@ -1,0 +1,8 @@
+{
+  "label": "ROS 2 Module",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn about Robot Operating System 2"
+  }
+}

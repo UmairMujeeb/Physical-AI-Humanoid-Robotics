@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch --all --prune)",
+      "Bash(powershell -Command \".specify/scripts/powershell/create-new-feature.ps1 -Json -Number 1 -ShortName ''book-specification'' -FeatureDescription ''Create a detailed project specification for the AI/spec-driven book creation project titled \"\"Physical AI & Humanoid Robotics\"\". This specification.md must fully inherit and comply with the project''''s Constitution stored in .specify/memory/constitution.md, including all core concepts, principles, global principles, constraints, stakeholders, and brand voice. The book is a Docusaurus-based digital book/site targeting beginners to intermediate learners, with a strong emphasis on hands-on learning through simulations, code tutorials, and exercises. Prioritize accessibility by focusing on free/open-source simulations (Gazebo, Isaac Sim where possible via cloud alternatives) rather than expensive hardware. Key requirements for the specification: 1. Book Structure and Chapters/Lessons - Define the overall book structure (sections, chapters, and lessons/subsections). Provide explicit Title and Description for each chapter. Map the course''''s weekly breakdown and modules (Module 1: ROS 2, Module 2: Gazebo & Unity, Module 3: NVIDIA Isaac, Module 4: VLA) into logical chapters. Include an introductory section, the 4 main modules as sections, a capstone chapter, and appendices. Total chapters should stay within 15-20. Each chapter should have 3-5 named lessons with titles and brief descriptions. 2. Content Guidelines and Lesson Format - Define clear, enforceable content guidelines (accessibility, hands-on ratio ≥80%, ethical discussions, readability standards, etc.). Specify a consistent lesson format template (e.g., Objectives, Introduction, Theory, Hands-On Tutorial, Exercise, Key Takeaways, Further Reading). Emphasize executable code (Python/rclpy), simulations, and step-by-step exercises runnable without expensive hardware. 3. Docusaurus Specification Requirements - Detail site structure (docs/ folder organization, sidebar navigation, versioning). Specify docusaurus.config.js requirements (theme, plugins, search, custom styling). Content formatting rules (Markdown standards, code blocks, images, interactivity via MDX or embeds). Build, testing, and deployment requirements (GitHub Actions CI/CD, dual deployment to GitHub Pages and Vercel). Additional instructions: - Perform gap analysis: Identify any mismatches between the hardware-heavy course and the book''''s accessibility needs (e.g., RTX GPUs, Jetson kits) and fill them by prioritizing simulations, cloud options (AWS RoboMaker, Omniverse Cloud), and affordable alternatives in appendices. - Include appendices for Hardware Alternatives, Assessments/Projects (adapted for self-paced learners), Glossary, and Resources. - Ensure all standards are testable and aligned with the Constitution''''s global principles. - End with a note on storing this as .specify/memory/specification.md and committing it.''\")",
+      "Bash(powershell -Command \".specify/scripts/powershell/setup-plan.ps1 -Json\")",
+      "Bash(powershell -Command \".specify/scripts/powershell/check-prerequisites.ps1 -Json\")",
+      "Bash(powershell -Command \".specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks\")",
+      "Bash(git rev-parse --git-dir)",
+      "Bash(npx create-docusaurus@latest website classic --typescript)",
+      "Bash(cd C:UsersPcDesktopNew folderAiwebsite)",
+      "Bash(npm install pyodide)",
+      "Bash(npm install three @types/three)",
+      "Bash(npm run build)",
+      "Bash(npm run start)",
+      "Bash(dir)",
+      "Bash(npx docusaurus start)",
+      "Bash(npx docusaurus start --port 3001)",
+      "Bash(npx docusaurus deploy)",
+      "Bash(dir \"website\\docs\\intro\")",
+      "Bash(dir \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\specs\\001-book-specification\")",
+      "Bash(dir \".specify\\memory\\constitution.md\")",
+      "Bash(git add .)"
+    ]
+  }
+}

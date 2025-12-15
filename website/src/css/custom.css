@@ -1,0 +1,127 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Robot-themed color palette for Physical AI & Humanoid Robotics */
+:root {
+  --ifm-color-primary: #1a73e8; /* Robot blue */
+  --ifm-color-primary-dark: #1865cc;
+  --ifm-color-primary-darker: #1658b3;
+  --ifm-color-primary-darkest: #124792;
+  --ifm-color-primary-light: #3b8cff;
+  --ifm-color-primary-lighter: #6ea6ff;
+  --ifm-color-primary-lightest: #a0c4ff;
+  --ifm-color-secondary: #4285f4; /* Secondary blue */
+  --ifm-color-accent: #34a853; /* Success green */
+  --ifm-color-warning: #fbbc04; /* Warning yellow */
+  --ifm-color-danger: #ea4335; /* Danger red */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(26, 115, 232, 0.15);
+  --ifm-navbar-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  --ifm-footer-background-color: #1a1a1a;
+  --ifm-footer-color: var(--ifm-color-emphasis-900);
+  --ifm-footer-link-color: var(--ifm-color-emphasis-800);
+}
+
+/* Dark mode robot theme */
+[data-theme='dark'] {
+  --ifm-color-primary: #4285f4; /* Lighter blue for dark mode */
+  --ifm-color-primary-dark: #3b78e0;
+  --ifm-color-primary-darker: #346bc2;
+  --ifm-color-primary-darkest: #2b58a3;
+  --ifm-color-primary-light: #5a96f5;
+  --ifm-color-primary-lighter: #73a7f7;
+  --ifm-color-primary-lightest: #8db8f9;
+  --docusaurus-highlighted-code-line-bg: rgba(66, 133, 244, 0.2);
+  --ifm-background-color: #0d0d0d;
+  --ifm-background-surface-color: #1a1a1a;
+  --ifm-footer-background-color: #0a0a0a;
+}
+
+/* Robot-themed custom styles */
+.robot-card {
+  border: 1px solid var(--ifm-color-primary-lighter);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.robot-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(26, 115, 232, 0.2);
+}
+
+/* Code block enhancements */
+.hero__title {
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Footer styling */
+.footer--dark {
+  background-color: var(--ifm-footer-background-color) !important;
+}
+
+/* Simulation environment styling */
+.simulation-environment {
+  background-color: rgba(66, 133, 244, 0.05);
+  border-left: 4px solid var(--ifm-color-primary);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Exercise and hands-on section styling */
+.exercise-box {
+  border: 2px dashed var(--ifm-color-accent);
+  background-color: rgba(52, 168, 83, 0.05);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+}
+
+/* Ethical discussion styling */
+.ethical-discussion {
+  border: 2px solid var(--ifm-color-warning);
+  background-color: rgba(251, 188, 4, 0.05);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+}
+
+/* Terminal/command styling */
+.terminal {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  overflow-x: auto;
+}
+
+/* Robot-themed headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+/* Enhanced table styling */
+.markdown table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.markdown table th {
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.1);
+}
+
+/* Navigation sidebar enhancements */
+.menu__list-item-collapsible:hover {
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.05);
+}

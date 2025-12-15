@@ -1,0 +1,8 @@
+{
+  "label": "NVIDIA Isaac Module",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "NVIDIA Isaac robotics platform"
+  }
+}

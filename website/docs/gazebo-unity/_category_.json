@@ -1,0 +1,8 @@
+{
+  "label": "Gazebo & Unity Module",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Simulation environments for robotics"
+  }
+}
