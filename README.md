@@ -1,6 +1,6 @@
 # Physical AI & Humanoid Robotics Book
 
-A comprehensive guide to Physical AI & Humanoid Robotics with hands-on learning focus, built with Docusaurus. This educational resource covers ROS 2, Gazebo, NVIDIA Isaac, and VLA models for advanced robotics applications.
+A comprehensive guide to Physical AI & Humanoid Robotics with hands-on learning focus, built with Docusaurus. This educational resource covers ROS 2, Gazebo, NVIDIA Isaac, and VLA models for advanced robotics applications, featuring an integrated RAG chatbot for enhanced learning.
 
 ## 📚 Overview
 
@@ -9,6 +9,7 @@ The Physical AI & Humanoid Robotics book is an educational platform designed for
 ### Key Features
 
 - **Interactive Learning**: 70-80% hands-on ratio with interactive code blocks and simulations
+- **RAG Chatbot**: Integrated chatbot that answers questions based on book content with citations
 - **Accessible Design**: WCAG 2.1 AA compliant with comprehensive accessibility features
 - **Modern Framework**: Built with Docusaurus v3.9.2 for optimal performance
 - **Cross-Platform**: Supports multiple simulation environments (Gazebo, Unity, Isaac Sim)
@@ -35,47 +36,99 @@ The Physical AI & Humanoid Robotics book is an educational platform designed for
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/physical-ai-humanoid-robotics-book/physical-ai-humanoid-robotics-book.git
-cd physical-ai-humanoid-robotics-book/website
+git clone https://github.com/UmairMujeeb/Physical-AI-Humanoid-Robotics.git
+cd Physical-AI-Humanoid-Robotics
 ```
 
-### 2. Install Dependencies
+### 2. Running the Full Application (Frontend + Backend)
 
+For the complete experience with the RAG chatbot, you need to run both the frontend and backend:
+
+**Backend (API Server):**
 ```bash
+cd backend
+pip install -r requirements.txt
+python main.py
+```
+The backend will run on `http://localhost:8000`
+
+**Frontend (Docusaurus Site):**
+```bash
+cd website  # from the project root
+npm install
+npm start
+```
+The frontend will run on `http://localhost:3000`
+
+### 3. Backend Setup (Required for Chatbot)
+
+1. Install Python dependencies:
+```bash
+cd backend
+pip install -r requirements.txt
+```
+
+2. Set up environment variables (create a `.env` file in the `backend` directory):
+```env
+OPENAI_API_KEY=your_openai_api_key
+QDRANT_API_KEY=your_qdrant_api_key
+QDRANT_URL=your_qdrant_url
+DATABASE_URL=your_database_url
+```
+
+3. Start the backend server:
+```bash
+python main.py
+```
+
+### 4. Frontend Setup
+
+1. Install dependencies:
+```bash
+cd website
 npm install
 ```
 
-### 3. Start Development Server
-
+2. Start the development server:
 ```bash
 npm start
 ```
 
 This will start the development server at `http://localhost:3000`.
 
-### 4. Build for Production
+### 5. Build for Production
 
+**Frontend:**
 ```bash
+cd website
 npm run build
 ```
 
-The built site will be available in the `build` directory.
+The built site will be available in the `website/build` directory.
 
 ## 📖 Documentation Structure
 
 ```
-website/
-├── docs/                 # Course content and documentation
-│   ├── intro/           # Introduction materials
-│   ├── ros2/            # ROS 2 fundamentals
-│   ├── gazebo-unity/    # Simulation content
-│   ├── nvidia-isaac/    # NVIDIA Isaac content
-│   ├── vla-capstone/    # Capstone module
-│   └── appendices/      # Additional resources
-├── src/                 # Custom React components
-│   └── components/      # Interactive components
-├── static/              # Static assets
-└── docusaurus.config.ts # Site configuration
+Physical-AI-Humanoid-Robotics/
+├── backend/             # FastAPI backend with RAG services
+│   ├── main.py          # Main application entry point
+│   ├── routers/         # API endpoints
+│   ├── services/        # RAG and embedding services
+│   └── models/          # Data models
+├── website/             # Docusaurus documentation site
+│   ├── docs/            # Course content and documentation
+│   │   ├── intro/       # Introduction materials
+│   │   ├── ros2/        # ROS 2 fundamentals
+│   │   ├── gazebo-unity/# Simulation content
+│   │   ├── nvidia-isaac/# NVIDIA Isaac content
+│   │   ├── vla-capstone/# Capstone module
+│   │   └── appendices/  # Additional resources
+│   ├── src/             # Custom React components
+│   │   └── components/  # Interactive components including Chatbot
+│   ├── static/          # Static assets
+│   └── docusaurus.config.ts # Site configuration
+├── frontend/            # Standalone frontend components
+└── specs/               # Project specifications
 ```
 
 ## 🧩 Interactive Features
@@ -92,6 +145,14 @@ Interactive 3D robot visualizations using Three.js:
 - Robot kinematics demonstrations
 - Real-time manipulation visualization
 - Interactive controls and parameters
+
+### RAG Chatbot
+Integrated Retrieval-Augmented Generation chatbot:
+- Answers questions based on book content only
+- Provides citations to original sources
+- Context-aware with selected text support
+- Floating interface available on all pages
+- Backend powered by FastAPI and Qdrant
 
 ### Code Sandbox
 Advanced code execution environment:
@@ -153,8 +214,13 @@ All interactive components maintain functionality across device sizes.
 
 ### GitHub Pages
 The site is configured for GitHub Pages deployment:
-- Built-in GitHub Actions workflow
+- Update `docusaurus.config.ts` with your repository details:
+  - `organizationName`: your GitHub username
+  - `projectName`: your repository name
+  - `baseUrl`: `/repository-name/` to match your repo
+- Built-in GitHub Actions workflow (see `.github/workflows/deploy.yml`)
 - Automatic deployment on main branch updates
+- Site will be available at `https://your-username.github.io/repository-name/`
 - Custom domain support
 
 ### Vercel

@@ -1,0 +1,56 @@
+#
+# Development dependencies for Physical AI & Humanoid Robotics RAG Chatbot
+#
+
+# Core Framework
+fastapi==0.115.6
+uvicorn[standard]==0.32.0
+
+# Async HTTP Client
+httpx==0.28.1
+
+# OpenAI SDK
+openai==1.55.0
+
+# Vector Database
+qdrant-client==1.12.1
+
+# Database
+sqlalchemy==2.0.36
+asyncpg==0.30.0
+psycopg2-binary==2.9.10
+
+# Configuration
+pydantic-settings==2.6.1
+python-dotenv==1.0.1
+
+# Embeddings and Text Processing
+tiktoken==0.8.0
+sentence-transformers==3.3.0
+
+# Document Processing
+pypdf==5.1.0
+python-docx==1.1.2
+markdown==3.7
+
+# Utilities
+pyyaml==6.0.2
+requests==2.32.3
+tqdm==4.67.1
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.25.0
+pytest-cov==6.0.0
+
+# Type Checking
+mypy==1.13.0
+
+# Linting
+flake8==7.1.1
+black==24.10.0
+isort==5.13.2
+
+# Async Utilities
+asyncio==3.4.3
+aiofiles==24.1.0

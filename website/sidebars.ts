@@ -82,7 +82,9 @@ const sidebars: SidebarsConfig = {
         'constitution-compliance-review',
         'content-creation-workflow',
         'maintenance-guide',
-        'cross-references-guide'
+        'cross-references-guide',
+        'chatbot/index',
+        'chatbot/integration'
       ],
       link: {
         type: 'doc',

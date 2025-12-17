@@ -1,0 +1,74 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.ENV
+.conda/
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+.nyc_output/
+coverage/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+.directory
+*.nib
+
+# Environment variables
+.env
+.env.local
+.env.dev
+.env.production
+.env.test
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+.jest/
+
+# System files
+nul
+NULL
+[C]:/
+
+# Temporary files
+*.tmp
+*.temp
+*~
+.DS_Store?
+
+# Claude specific files
+.claude/
+
+# Specify memory files (optional, you may want to include these)
+.specify/memory/phase2-contracts/
+.specify/memory/phase2-data-model.md
+.specify/memory/phase2-plan.md
+.specify/memory/phase2-quickstart.md
+.specify/memory/phase2-research.md
+.specify/memory/phase2-tasks.md

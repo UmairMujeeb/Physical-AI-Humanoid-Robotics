@@ -1,0 +1,114 @@
+{
+  "name": "physical-ai-humanoid-robotics-chatbot",
+  "version": "1.0.0",
+  "description": "Interactive chatbot for the Physical AI & Humanoid Robotics book",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
+    "format": "prettier --write src/**/*.{ts,tsx,css,md,json,yaml,yml}",
+    "format:check": "prettier --check src/**/*.{ts,tsx,css,md,json,yaml,yml}",
+    "type-check": "tsc --noEmit",
+    "preview": "vite preview",
+    "analyze": "vite build --mode analyze",
+    "clean": "rimraf dist coverage .nyc_output",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "chatbot",
+    "ai",
+    "robotics",
+    "education",
+    "docusaurus",
+    "rag",
+    "openai",
+    "pyodide",
+    "threejs"
+  ],
+  "author": "Physical AI & Humanoid Robotics Project",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/physical-ai-humanoid-robotics-book/physical-ai-humanoid-robotics-book.git"
+  },
+  "bugs": {
+    "url": "https://github.com/physical-ai-humanoid-robotics-book/physical-ai-humanoid-robotics-book/issues"
+  },
+  "homepage": "https://physical-ai-humanoid-robotics-book.github.io/",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.160.0",
+    "pyodide": "^0.24.1",
+    "@docusaurus/core": "^3.1.0",
+    "@docusaurus/module-type-aliases": "^3.1.0",
+    "@docusaurus/types": "^3.1.0",
+    "axios": "^1.6.0",
+    "zustand": "^4.4.7",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.1",
+    "rehype-raw": "^7.0.0",
+    "clsx": "^2.0.0",
+    "framer-motion": "^10.16.4",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "@radix-ui/react-accordion": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@types/three": "^0.160.0",
+    "@types/node": "^20.10.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.10",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vitest": "^1.0.4",
+    "@vitest/ui": "^1.0.4",
+    "@vitest/coverage-v8": "^1.0.4",
+    "jsdom": "^23.0.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "prettier": "^3.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "cross-env": "^7.0.3",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/user-event": "^14.5.1",
+    "happy-dom": "^12.10.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yaml,yml,css,scss}": [
+      "prettier --write"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

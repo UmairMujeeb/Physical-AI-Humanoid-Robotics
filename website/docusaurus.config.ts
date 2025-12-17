@@ -15,15 +15,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://physical-ai-humanoid-robotics-book.github.io',
+  url: 'https://umairmujeeb.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/Physical-AI-Humanoid-Robotics/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'physical-ai-humanoid-robotics-book', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-humanoid-robotics-book', // Usually your repo name.
+  organizationName: 'UmairMujeeb', // Usually your GitHub org/user name.
+  projectName: 'Physical-AI-Humanoid-Robotics', // Usually your repo name.
 
   // Deployment configuration
   deploymentBranch: 'gh-pages', // Branch used for deployment
@@ -59,7 +59,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/physical-ai-humanoid-robotics-book/physical-ai-humanoid-robotics-book/edit/main/website/',
+            'https://github.com/UmairMujeeb/Physical-AI-Humanoid-Robotics/edit/main/website/',
           // Sitemap configuration for SEO
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
@@ -102,13 +102,21 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
+    scripts: [
+      // Add script to initialize chatbot after page load
+      {
+        src: '/js/chatbot-init.js',
+        async: true,
+        defer: true,
+      },
+    ],
     metadata: [
       {name: 'keywords', content: 'robotics, ai, physical ai, humanoid robotics, ros2, simulation, education, computer science, engineering, ai robotics, machine learning'},
       {name: 'description', content: 'A comprehensive guide to Physical AI & Humanoid Robotics with hands-on learning focus. Learn ROS 2, Gazebo, NVIDIA Isaac, and VLA models for advanced robotics applications.'},
       {name: 'og:title', content: 'Physical AI & Humanoid Robotics Book'},
       {name: 'og:description', content: 'Comprehensive guide to robotics with hands-on learning focus covering ROS 2, simulation, perception, manipulation, and AI integration.'},
       {name: 'og:type', content: 'website'},
-      {name: 'og:url', content: 'https://physical-ai-humanoid-robotics-book.github.io'},
+      {name: 'og:url', content: 'https://umairmujeeb.github.io/Physical-AI-Humanoid-Robotics/'},
       {name: 'twitter:card', content: 'summary_large_image'},
       {name: 'twitter:site', content: '@robotics_edu'},
       {name: 'robots', content: 'index, follow'},
