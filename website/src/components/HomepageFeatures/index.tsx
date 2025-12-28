@@ -5,52 +5,101 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  icon: string;  // Using emoji icons instead of SVG for robot theme
   description: ReactNode;
+  modules?: string[]; // List of modules in this section
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Hands-On Learning',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Introduction to Physical AI',
+    icon: '🤖',
     description: (
       <>
-        70-80% of content is hands-on with executable code examples and simulation environments.
-        Learn by doing with practical exercises and projects.
+        Begin your journey with the fundamentals of Physical AI and humanoid robotics.
+        Understand the core concepts, principles, and applications that drive modern robotics.
       </>
     ),
+    modules: ['Chapter 1: Getting Started', 'Chapter 2: Core Concepts', 'Chapter 3: Learning Approach'],
   },
   {
-    title: 'Accessible Approach',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'ROS 2 & Control Systems',
+    icon: '⚙️',
     description: (
       <>
-        Focus on free/open-source simulations (Gazebo, Isaac Sim) rather than expensive hardware.
-        Perfect for beginners to intermediate learners.
+        Master the Robot Operating System (ROS 2) and learn about control systems that
+        enable robots to interact with the physical world.
       </>
     ),
+    modules: ['Chapter 4: ROS 2 Fundamentals', 'Chapter 5: Advanced ROS 2', 'Chapter 6: Control Systems'],
   },
   {
-    title: 'Modern Robotics Concepts',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Simulation Environments',
+    icon: '🎮',
     description: (
       <>
-        Covering ROS 2, NVIDIA Isaac, Vision Language Action (VLA) models,
-        and state-of-the-art humanoid robotics implementations.
+        Experience robotics in action with Gazebo and Unity simulation environments.
+        Practice with realistic physics engines without expensive hardware.
       </>
     ),
+    modules: ['Chapter 7: Gazebo Simulation', 'Chapter 8: Unity Robotics', 'Chapter 9: Simulation Best Practices'],
+  },
+  {
+    title: 'NVIDIA Isaac & Perception',
+    icon: '👁️',
+    description: (
+      <>
+        Explore NVIDIA Isaac robotics platform focusing on perception, navigation,
+        and manipulation capabilities for humanoid robots.
+      </>
+    ),
+    modules: ['Chapter 10: Isaac Overview', 'Chapter 11: Perception Systems', 'Chapter 12: Navigation'],
+  },
+  {
+    title: 'Vision-Language-Action Models',
+    icon: '🧠',
+    description: (
+      <>
+        Understand cutting-edge VLA models that integrate vision, language, and
+        action capabilities in humanoid robotics.
+      </>
+    ),
+    modules: ['Chapter 13: VLA Fundamentals', 'Chapter 14: Implementation', 'Chapter 15: Applications'],
+  },
+  {
+    title: 'Capstone Projects',
+    icon: '🎓',
+    description: (
+      <>
+        Apply your knowledge with comprehensive capstone projects integrating
+        all concepts learned throughout the book.
+      </>
+    ),
+    modules: ['Chapter 16: Project Planning', 'Chapter 17: Implementation', 'Chapter 18: Evaluation'],
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, icon, description, modules}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+    <div className={clsx('col', 'col--4', styles.moduleCardCol)}>
+      <div className={clsx('card', styles.moduleCard)}>
+        <div className={styles.cardHeader}>
+          <div className={styles.moduleIcon}>{icon}</div>
+          <Heading as="h3" className={styles.cardTitle}>{title}</Heading>
+        </div>
+        <div className={styles.cardBody}>
+          <p className={styles.cardDescription}>{description}</p>
+          {modules && (
+            <div className={styles.modulesList}>
+              <h4>Modules:</h4>
+              <ul>
+                {modules.map((module, idx) => (
+                  <li key={idx} className={styles.moduleItem}>{module}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -58,7 +107,7 @@ function Feature({title, Svg, description}: FeatureItem) {
 
 export default function HomepageFeatures(): ReactNode {
   return (
-    <section className={styles.features}>
+    <section className={clsx(styles.features, styles.featuresSection)}>
       <div className="container">
         <div className="row">
           {FeatureList.map((props, idx) => (

@@ -159,18 +159,22 @@ const Chatbot: React.FC<ChatbotProps> = ({
   };
 
   return (
-    <div className="chatbot-container">
+    <div className="chatbot-container robot-themed-card">
       <div className="chatbot-header">
+        <div className="robot-avatar">🤖</div>
         <h3>Physical AI & Robotics Assistant</h3>
-        <div>
-          <button onClick={handleClearChat} className="clear-button">
-            Clear Chat
+        <div className="header-actions">
+          <button
+            onClick={handleClearChat}
+            className="action-button"
+            aria-label="Clear chat history"
+          >
+            🗑️
           </button>
           {onClose && (
             <button
               onClick={onClose}
-              className="clear-button"
-              style={{ marginLeft: '8px' }}
+              className="action-button"
               aria-label="Close chatbot"
             >
               ×
@@ -182,48 +186,58 @@ const Chatbot: React.FC<ChatbotProps> = ({
       <div className="chat-messages">
         {state.messages.length === 0 ? (
           <div className="welcome-message">
-            <p>Hello! I'm your Physical AI & Humanoid Robotics assistant.</p>
-            <p>Ask me anything about the book content, or highlight text and ask me to "Explain this".</p>
+            <div className="welcome-icon">🤖</div>
+            <h4>Hi! I'm your Physical AI guide</h4>
+            <p>Ask me anything about humanoid robotics or highlight text to dive deeper.</p>
           </div>
         ) : (
           state.messages.map((message) => (
             <div
               key={message.id}
-              className={`message ${message.role}`}
+              className={`message-bubble ${message.role}`}
               aria-live={message.role === 'assistant' ? 'polite' : 'off'}
               aria-atomic="true"
             >
+              {message.role === 'assistant' && (
+                <div className="avatar">🤖</div>
+              )}
               <div className="message-content">
                 {message.content.split('\n').map((line, i) => (
                   <p key={i}>{line}</p>
                 ))}
-              </div>
 
-              {message.citations && message.citations.length > 0 && (
-                <div className="citations">
-                  <details>
-                    <summary>Sources ({message.citations.length})</summary>
-                    <ul>
+                {message.citations && message.citations.length > 0 && (
+                  <div className="citations-container">
+                    <div className="citations-header">Sources:</div>
+                    <div className="citations-list">
                       {message.citations.map((citation, idx) => (
-                        <li key={idx}>
-                          <a href={citation.source} target="_blank" rel="noopener noreferrer">
-                            {citation.text_snippet.substring(0, 100)}...
-                          </a>
-                        </li>
+                        <a
+                          key={idx}
+                          href={citation.source}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="citation-chip"
+                        >
+                          {citation.text_snippet.substring(0, 60)}...
+                        </a>
                       ))}
-                    </ul>
-                  </details>
-                </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              {message.role === 'user' && (
+                <div className="avatar">👤</div>
               )}
             </div>
           ))
         )}
         {state.isLoading && (
-          <div className="message assistant">
+          <div className="message-bubble assistant">
+            <div className="avatar">🤖</div>
             <div className="typing-indicator">
-              <span></span>
-              <span></span>
-              <span></span>
+              <span className="typing-dot"></span>
+              <span className="typing-dot"></span>
+              <span className="typing-dot"></span>
             </div>
           </div>
         )}
@@ -245,13 +259,15 @@ const Chatbot: React.FC<ChatbotProps> = ({
             rows={2}
             aria-label="Type your question here"
             disabled={state.isLoading}
+            className="robot-themed-input"
           />
           <button
             onClick={handleSendMessage}
             disabled={!inputValue.trim() || state.isLoading}
             aria-label="Send message"
+            className="robot-themed-button"
           >
-            {state.isLoading ? 'Sending...' : 'Send'}
+            {state.isLoading ? 'Sending...' : '➤'}
           </button>
         </div>
       </div>

@@ -72,3 +72,5 @@ NULL
 .specify/memory/phase2-quickstart.md
 .specify/memory/phase2-research.md
 .specify/memory/phase2-tasks.md
+.qwen/
+gha-creds-*.json

@@ -18,7 +18,7 @@ const config: Config = {
   url: 'https://umairmujeeb.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Physical-AI-Humanoid-Robotics/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -34,7 +34,12 @@ const config: Config = {
     // Add any performance optimization scripts here
   ],
   stylesheets: [
-    // Optimize loading of stylesheets
+    // Robot-themed fonts
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700&display=swap',
+      type: 'text/css',
+      rel: 'stylesheet',
+    },
   ],
 
   onBrokenLinks: 'throw',

@@ -62,6 +62,18 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Chatbot',
+      items: [
+        'chatbot/index',
+        'chatbot/integration'
+      ],
+      link: {
+        type: 'doc',
+        id: 'chatbot/index',
+      },
+    },
+    {
+      type: 'category',
       label: 'Appendices',
       items: [
         'appendices/glossary',
@@ -82,9 +94,7 @@ const sidebars: SidebarsConfig = {
         'constitution-compliance-review',
         'content-creation-workflow',
         'maintenance-guide',
-        'cross-references-guide',
-        'chatbot/index',
-        'chatbot/integration'
+        'cross-references-guide'
       ],
       link: {
         type: 'doc',

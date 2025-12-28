@@ -20,7 +20,32 @@
       "Bash(dir \"website\\docs\\intro\")",
       "Bash(dir \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\specs\\001-book-specification\")",
       "Bash(dir \".specify\\memory\\constitution.md\")",
-      "Bash(git add .)"
+      "Bash(git add .)",
+      "Bash(git push -u origin master)",
+      "Bash(git checkout 001-book-specification)",
+      "Bash(git push -u origin 001-book-specification)",
+      "Bash(dir \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\.specify\\memory\\phase2-*\")",
+      "Bash(dir \"phase2-*\")",
+      "Bash(dir \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\specs\" /s)",
+      "Bash(dir \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\specs\\002-rag-chatbot\")",
+      "Bash(dir \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\specs\\002-rag-chatbot\\checklists\")",
+      "Bash(dir \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\website\\src\\components\")",
+      "Bash(move \"C:\\Users\\Pc\\Desktop\\New folder\\New folder\\Ai\\website\\src\\components\\ChatbotWrapper\\ChatbotWrapper.css\" \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\website\\src\\components\\ChatbotWrapper\\ChatbotWrapper.css\")",
+      "Bash(dir \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\website\\src\\components\\ChatbotWrapper\")",
+      "Bash(dir \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\website\")",
+      "Bash(del \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\website\\src\\components\\Root\\Root.tsx\")",
+      "Bash(dir \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\website\\src\\components\\Root\")",
+      "Bash(dir \".github\")",
+      "Bash(dir \".github\\workflows\")",
+      "Bash(dir \".gitignore\")",
+      "Bash(git rm --cached nul)",
+      "Bash(dir \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\website\\docs\\chatbot\")",
+      "Bash(.sp)",
+      "SlashCommand(/sp.analyze)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json -RequireTasks -IncludeTasks)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powersaurus/setup-plan.ps1\" -Json)",
+      "Bash(cat /tmp/claude/tasks/b0d600d.output)",
+      "Bash(dir \"C:\\Users\\Pc\\Desktop\\New folder\\Ai\\history\\prompts\\gh-pages\"\")"
     ]
   }
 }

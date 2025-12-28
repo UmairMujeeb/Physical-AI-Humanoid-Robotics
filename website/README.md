@@ -68,6 +68,23 @@ Each lesson follows a consistent structure:
 7. Key Takeaways
 8. Further Reading
 
+## API Key Configuration
+
+To use the RAG chatbot functionality, you need to configure your OpenAI API key:
+
+### Environment Setup
+1. Create a `.env` file in the backend directory with your OpenAI API key:
+   ```bash
+   OPENAI_API_KEY=sk-your-api-key-here
+   ```
+
+2. For deployment platforms:
+   - **Vercel**: Add the `OPENAI_API_KEY` as an environment variable in your project settings
+   - **GitHub Actions**: Add the `OPENAI_API_KEY` as a repository secret
+
+### Security Note
+The API key is securely handled on the backend only. The frontend communicates with the backend through a proxy to avoid exposing the key in the browser.
+
 ## Contributing
 
 To contribute to this book:
